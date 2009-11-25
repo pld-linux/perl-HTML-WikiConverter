@@ -19,10 +19,13 @@ BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-CSS >= 1.07
 BuildRequires:	perl-Class-Data-Inheritable >= 0.02
+BuildRequires:	perl-Encode
 BuildRequires:	perl-HTML-Parser >= 1.27
 BuildRequires:	perl-HTML-Tagset >= 3.04
 BuildRequires:	perl-HTML-Tree >= 3.18
 BuildRequires:	perl-Params-Validate >= 0.77
+BuildRequires:	perl-Test-Pod
+BuildRequires:	perl-Test-Pod-Coverage
 BuildRequires:	perl-URI
 %endif
 BuildArch:	noarch
