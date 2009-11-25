@@ -19,7 +19,6 @@ BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-CSS >= 1.07
 BuildRequires:	perl-Class-Data-Inheritable >= 0.02
-BuildRequires:	perl-HTML-Element
 BuildRequires:	perl-HTML-Parser >= 1.27
 BuildRequires:	perl-HTML-Tagset >= 3.04
 BuildRequires:	perl-HTML-Tree >= 3.18
