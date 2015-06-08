@@ -6,6 +6,7 @@
 %define	pdir	HTML
 %define	pnam	WikiConverter
 Summary:	HTML::WikiConverter - Convert HTML to wiki markup
+Summary(pl.UTF-8):	HTML::WikiConverter - konwertowanie HTML-a do znaczników wiki
 Name:		perl-HTML-WikiConverter
 Version:	0.68
 Release:	1
@@ -53,9 +54,32 @@ The following dialects are supported:
 
 Note that while dialects usually produce satisfactory wiki markup, not
 all features of all dialects are supported. Consult individual
-dialects' documentation for details of supported features. Suggestions
-for improvements, especially in the form of patches, are very much
-appreciated.
+dialects' documentation for details of supported features.
+
+%description -l pl.UTF-8
+HTML::WikiConverter to konwerter HTML-a do wiki. Potrafi konwertować
+źródło w HTML-u do różnych rodzajów znaczników wiki, nazywanych
+"dialektami".
+
+Obsługiwane są następujące dialekty:
+- DokuWiki
+- Kwiki
+- MediaWiki
+- MoinMoin
+- Oddmuse
+- PbWiki
+- PhpWiki
+- PmWiki
+- SlipSlap
+- TikiWiki
+- UseMod
+- WakkaWiki
+- WikkaWiki
+
+Uwaga: o ile dialekty zwykle zawierają satysfakcjonujące znaczniki, 
+nie wszystkie możliwości wszystkich dialektów są obsługiwane.
+Szczegóły obsługiwanych możliwości można znaleźć w dokumentacji dla
+poszczególnych dialektów.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -80,7 +104,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes INSTALL README
 %attr(755,root,root) %{_bindir}/html2wiki
-%{perl_vendorlib}/HTML/*.pm
+%{perl_vendorlib}/HTML/WikiConverter.pm
 %{perl_vendorlib}/HTML/WikiConverter
 %{_mandir}/man1/html2wiki.1p*
-%{_mandir}/man3/*
+%{_mandir}/man3/HTML::WikiConverter*.3pm*
