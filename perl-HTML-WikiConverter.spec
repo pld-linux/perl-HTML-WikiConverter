@@ -18,6 +18,8 @@ URL:		http://search.cpan.org/dist/HTML-WikiConverter/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
+BuildRequires:	perl(Pod::Usage) >= 1.16
+BuildRequires:	perl-CGI-Application
 BuildRequires:	perl-CSS >= 1.07
 BuildRequires:	perl-Class-Data-Inheritable >= 0.02
 BuildRequires:	perl-Encode
@@ -27,8 +29,17 @@ BuildRequires:	perl-HTML-Tree >= 3.18
 BuildRequires:	perl-Params-Validate >= 0.77
 BuildRequires:	perl-Test-Pod
 BuildRequires:	perl-Test-Pod-Coverage
-BuildRequires:	perl-URI
+BuildRequires:	perl-Test-Simple
+BuildRequires:	perl-URI >= 1.35
 %endif
+Requires:	perl(Pod::Usage) >= 1.16
+Requires:	perl-CSS >= 1.07
+Requires:	perl-Class-Data-Inheritable >= 0.02
+Requires:	perl-HTML-Parser >= 1.27
+Requires:	perl-HTML-Tagset >= 3.04
+Requires:	perl-HTML-Tree >= 3.18
+Requires:	perl-Params-Validate >= 0.77
+Requires:	perl-URI >= 1.35
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -83,6 +94,9 @@ poszczególnych dialektów.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+
+# disable network tests
+%{__sed} -i -e '/^my \$have_lwp =/s/= .*/= 0;/' t/01-wikiconverter.t
 
 %build
 %{__perl} Makefile.PL \
