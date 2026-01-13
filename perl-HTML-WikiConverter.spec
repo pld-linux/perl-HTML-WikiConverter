@@ -8,7 +8,7 @@ Summary:	HTML::WikiConverter - Convert HTML to wiki markup
 Summary(pl.UTF-8):	HTML::WikiConverter - konwertowanie HTML-a do znaczników wiki
 Name:		perl-HTML-WikiConverter
 Version:	0.68
-Release:	1
+Release:	2
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/HTML/%{pdir}-%{pnam}-%{version}.tar.gz
